@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #4a4a4a;
+}
+
+.cartao {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+    border: 2px solid #f8e1e7;
+}
+
+.titulo-principal {
+    color: #d4a373;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.moldura-foto img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #faedcd;
+    transition: transform 0.3s ease;
+    animation: pulsar 2s infinite ease-in-out;
+}
+
+@keyframes pulsar {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.mensagem-texto {
+    font-style: italic;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+#botao-surpresa {
+    background-color: #d4a373;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#botao-surpresa:hover {
+    background-color: #bc8a5f;
+}
+
+.escondido {
+    display: none;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    animation: surgir 1s forwards;
+}
+
+#botao-proxima-pagina {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: #d4a373;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #d4a373;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+#botao-proxima-pagina:hover {
+    background-color: #d4a373;
+    color: white;
+    transform: scale(1.05);
+}
+
+@keyframes surgir {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

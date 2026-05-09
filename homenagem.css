@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fffafb;
+    font-family: 'Georgia', serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.cabecalho-homenagem {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), 
+                url('https://www.transparenttextures.com/patterns/cubes.png');
+    text-align: center;
+}
+
+.cabecalho-homenagem h1 {
+    font-size: 3.5rem;
+    color: #b5838d;
+    margin-bottom: 10px;
+}
+
+.mural-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.secao-memoria {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+.secao-memoria.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.secao-memoria.reverso {
+    flex-direction: row-reverse;
+}
+
+.texto-bonito {
+    flex: 1;
+    padding: 20px;
+}
+
+.texto-bonito h2 {
+    color: #e5989b;
+    font-size: 2rem;
+}
+
+.foto-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.foto-container img {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 20px 20px 0px #ffcdb2;
+    transition: transform 0.5s;
+}
+
+.foto-container img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.rodape-final {
+    text-align: center;
+    padding: 100px 0;
+    background: #ffcdb2;
+}
+
+.botao-voltar {
+    text-decoration: none;
+    color: #6d6875;
+    font-weight: bold;
+    border: 1px solid #6d6875;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.botao-voltar:hover {
+    background: #6d6875;
+    color: white;
+}
+
+.area-presente {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.cartao-presente-grande {
+    background-color: #ffcdb2;
+    padding: 50px;
+    border-radius: 40px;
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.caixa-maior {
+    width: 160px;
+    height: 160px;
+    margin: 60px auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.fita-vertical-branca { width: 20%; height: 100%; left: 40%; background: white; position: absolute; }
+.fita-horizontal-branca { width: 100%; height: 20%; top: 40%; background: white; position: absolute; }
+
+.corpo {
+    width: 100%;
+    height: 100%;
+    background: #e5989b;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.tampa {
+    width: 110%;
+    height: 30px;
+    background: #b5838d;
+    position: absolute;
+    top: -15px;
+    left: -5%;
+    z-index: 4;
+    border-radius: 5px;
+    transition: all 0.6s ease-in-out;
+}
+
+.balao-hq {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 200px;
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    border: 3px solid #333;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.balao-hq::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+}
+
+/* Efeito de Aberto */
+.caixa-maior.aberta .tampa {
+    transform: translateX(100px) rotate(20deg);
+    opacity: 0.8;
+}
+
+.caixa-maior.aberta .balao-hq {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-150px) scale(1);
+    z-index: 5;
+}
+
+.texto-carinho-central {
+    margin-top: 30px;
+    color: #6d6875;
+    font-weight: bold;
+    font-style: italic;
+}
+
+@keyframes balancar-caixa {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.caixa-maior:hover:not(.aberta) {
+    animation: balancar-caixa 0.4s infinite ease-in-out;
+}
+
+.caixa-maior:hover:not(.aberta) .corpo {
+    filter: brightness(1.1);
+    transition: 0.3s;
+}
