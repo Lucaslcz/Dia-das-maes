@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -7,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width: 100%;
     color: #4a4a4a;
 }
 
@@ -17,6 +22,7 @@ body {
     text-align: center;
     max-width: 450px;
     width: 90%;
+    margin: 20px auto;
     border: 2px solid #f8e1e7;
 }
 
@@ -72,8 +78,8 @@ body {
 }
 
 #botao-proxima-pagina {
-    display: inline-block;
-    margin-top: 20px;
+    display: block;
+    margin: 20px auto 0;
     padding: 10px 20px;
     background-color: transparent;
     color: #d4a373;
@@ -98,21 +104,22 @@ body {
 @media (max-width: 500px) {
     body {
         padding: 20px;
+        align-items: center;
     }
 
     .cartao {
-        padding: 25px 15px;
+        padding: 30px 20px;
         width: 100%;
-        max-width: none;
+        margin: 0;
     }
 
     .titulo-principal {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
 
     .moldura-foto img {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
     }
 
     .mensagem-texto p {
@@ -121,9 +128,10 @@ body {
 
     #botao-surpresa, #botao-proxima-pagina {
         width: 100%;
-        box-sizing: border-box;
         font-size: 0.9rem;
         padding: 15px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     #mensagem-oculta h2 {
