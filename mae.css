@@ -94,3 +94,39 @@ body {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+@media (max-width: 500px) {
+    body {
+        padding: 20px;
+    }
+
+    .cartao {
+        padding: 25px 15px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .titulo-principal {
+        font-size: 1.5rem;
+    }
+
+    .moldura-foto img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .mensagem-texto p {
+        font-size: 0.95rem;
+    }
+
+    #botao-surpresa, #botao-proxima-pagina {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    #mensagem-oculta h2 {
+        font-size: 1.2rem;
+    }
+}
